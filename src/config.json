@@ -1,0 +1,5 @@
+{
+    "ApiServiceBaseUrl1": "http://localhost:4000/",
+    "ApiServiceBaseUrl": "https://inventory-samples-be.vercel.app/"
+  }
+  

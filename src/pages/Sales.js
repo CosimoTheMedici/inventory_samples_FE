@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import AddSale from "../components/AddSale";
 import AuthContext from "../AuthContext";
+import  config  from '../config.json';
+
 
 function Sales() {
   const [showSaleModal, setShowSaleModal] = useState(false);
@@ -19,7 +21,7 @@ function Sales() {
 
   // Fetching Data of All Sales
   const fetchSalesData = () => {
-    fetch(`http://localhost:4000/api/sales/get/${authContext.user}`)
+    fetch(`${config.ApiServiceBaseUrl}/api/sales/get/${authContext.user}`)
       .then((response) => response.json())
       .then((data) => {
         setAllSalesData(data);
@@ -29,7 +31,7 @@ function Sales() {
 
   // Fetching Data of All Products
   const fetchProductsData = () => {
-    fetch(`http://localhost:4000/api/product/get/${authContext.user}`)
+    fetch(`${config.ApiServiceBaseUrl}/api/product/get/${authContext.user}`)
       .then((response) => response.json())
       .then((data) => {
         setAllProducts(data);
@@ -39,7 +41,7 @@ function Sales() {
 
   // Fetching Data of All Stores
   const fetchStoresData = () => {
-    fetch(`http://localhost:4000/api/store/get/${authContext.user}`)
+    fetch(`${config.ApiServiceBaseUrl}/api/store/get/${authContext.user}`)
       .then((response) => response.json())
       .then((data) => {
         setAllStores(data);

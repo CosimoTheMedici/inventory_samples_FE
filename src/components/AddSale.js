@@ -1,6 +1,7 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/24/outline";
+import  config  from '../config.json';
 
 export default function AddSale({
   addSaleModalSetting,
@@ -27,7 +28,7 @@ export default function AddSale({
 
   // POST Data
   const addSale = () => {
-    fetch("http://localhost:4000/api/sales/add", {
+    fetch(`${config.ApiServiceBaseUrl}/api/sales/add`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
