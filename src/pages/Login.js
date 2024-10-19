@@ -62,7 +62,7 @@ function Login() {
   const tryReachServer = (e) => {
     // Cannot send empty data
   
-      fetch(`http://rental.goodfellatech.co.ke/`, {
+      fetch(`https://rental.goodfellatech.co.ke/`, {
         method: "GET",
        
       })
