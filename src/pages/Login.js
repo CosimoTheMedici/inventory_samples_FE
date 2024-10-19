@@ -59,6 +59,24 @@ function Login() {
   };
 
 
+  const tryReachServer = (e) => {
+    // Cannot send empty data
+  
+      fetch(`http://rental.goodfellatech.co.ke/`, {
+        method: "GET",
+       
+      })
+        .then((result) => {
+          console.log("User login", result);
+        })
+        .catch((error) => {
+          console.log("Something went wrong ", error);
+        });
+    
+   
+  };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -164,6 +182,20 @@ function Login() {
                   /> */}
                 </span>
                 Sign in
+              </button>
+              <br/>
+              <button
+                type="submit"
+                className="group relative flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                onClick={tryReachServer}
+              >
+                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                  {/* <LockClosedIcon
+                    className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                    aria-hidden="true"
+                  /> */}
+                </span>
+                try reach server
               </button>
               <p className="mt-2 text-center text-sm text-gray-600">
                 Or{" "}
